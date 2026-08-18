@@ -10,31 +10,43 @@ Cross-region backup replication provides an additional copy of the backup in a g
 🏗️ Project Architecture :
 <img width="800" height="559" alt="image" src="https://github.com/user-attachments/assets/632b5f36-2900-42dc-b964-14e48ac497fe" />
 
- AWS Regions Used
+
+
+🎯  AWS Regions Used
+
+
 | Purpose                 | Region                       |
 | ----------------------- | ---------------------------- |
 | Source / Primary Region | Mumbai (`ap-south-1`)        |
 | Destination / DR Region | Singapore (`ap-southeast-1`) |
 
-1. EC2 Instance Setup
-2. <img width="1366" height="768" alt="Screenshot (114)" src="https://github.com/user-attachments/assets/2033f6a2-53c4-4aaa-8439-47246428b3f1" />
+
+🎯1. EC2 Instance Setup
+
+ <img width="1366" height="768" alt="Screenshot (114)" src="https://github.com/user-attachments/assets/2033f6a2-53c4-4aaa-8439-47246428b3f1" />
+
 
 <img width="1366" height="768" alt="Screenshot (115)" src="https://github.com/user-attachments/assets/bc0f192d-4cce-4b93-89dd-2d797d77167d" />
 
-2>. Create Source Backup Vault 
+
+🎯 2. Create Source Backup Vault 
+
+
 A Backup Vault is a secure storage location in AWS Backup where backup recovery points are stored.
 
 Steps to Create a Backup Vault
-Open the AWS Management Console.
-Go to AWS Backup.
-Select Backup vaults from the left-side menu.
-Click Create backup vault.
-Enter a vault name, for example:
-EC2-Backup-Vault
-Select the required Encryption key.
-Optionally enable Vault Lock for additional protection.
-Click Create backup vault.
-Purpose
+1 Open the AWS Management Console.
+2 Go to AWS Backup.
+3 Select Backup vaults from the left-side menu.
+4 Click Create backup vault.
+5 Enter a vault name, for example:
+6 EC2-Backup-Vault
+7 Select the required Encryption key.
+8 Optionally enable Vault Lock for additional protection.
+9 Click Create backup vault.
+
+
+🎯 Purpose
 
 The Backup Vault is used to:
 
@@ -43,21 +55,25 @@ Protect backups from accidental deletion.
 Control backup retention.
 Provide a secure location for backups.
 Store backup copies used for disaster recovery.
-2. Create Source Backup Vault
+
+🎯 3 Create Source Backup Vault
 
 The first backup vault was created in the Mumbai region.
 <img width="1366" height="768" alt="Screenshot (116)" src="https://github.com/user-attachments/assets/6664dc5f-8d27-463c-aff1-9d82033548b0" />
+
 <img width="1366" height="768" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/7964d24c-a5be-4f9b-a5a5-34161cb86ef1" />
 
 
-Create Destination Backup Vault
+
+🎯 Create Destination Backup Vault
 
 A second backup vault was created in the Singapore region.
 
-4##. Create AWS Backup Plan
+
+🎯4 Create AWS Backup Plan
 
 A backup plan was created in the Mumbai region.
-. Create AWS Backup Plan
+ Create AWS Backup Plan
 
 An AWS Backup Plan defines when backups should be created, how often they should run, where they should be stored, and how long they should be retained.
 
